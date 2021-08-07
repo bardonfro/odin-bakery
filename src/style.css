@@ -1,0 +1,22 @@
+/*
+Colors:
+Palette: https://coolors.co/320503-4f5d75-cb8857-4d7ea8-f3f5f7
+--dark-sienna: #320503ff;
+--independence: #4f5d75ff;
+--raw-sienna: #cb8857ff;
+--steel-blue: #4d7ea8ff;
+--cultured: #f3f5f7ff;
+*/
+
+body,html {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#content {
+    background-image: url(./cookie-stack.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
