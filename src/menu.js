@@ -5,13 +5,19 @@ const menuItems = menuProcess();
 
 const renderMenuItem = function (food) {
     const card = dmy.el("div.menu-card");
+    const textWrapper = dmy.el("div.text-wrapper");
+
     const title = dmy.el("h4.food-title",food.name);
     const description = dmy.el("p.food-description",food.description);
     const unitPrice = dmy.el("p.unit-price",food.unitPrice);
     const dozenPrice = dmy.el("p.dozen-price",food.dozenPrice);
+    
+    const imageWrapper = dmy.el("div.image-wrapper");
     const image = food.imageElement;
+    imageWrapper.appendChild(image);
    
-    dmy.appendChildren(card,image,title,description,unitPrice,dozenPrice);
+    dmy.appendChildren(textWrapper,title,description,unitPrice,dozenPrice)
+    dmy.appendChildren(card,imageWrapper,textWrapper);
     
     return card;
 

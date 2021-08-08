@@ -14,10 +14,9 @@ $milk: rgba(243, 245, 247, .8); // --cultured
 $title-font: 'Tangerine', cursive;
 $body-font: 'Roboto', sans-serif;
 
-@mixin content-box() {
+%content-box {
     background-color: $milk;
     border: 2px solid $slate;
-    color: $highlight;
 }
 
 body,html {
@@ -98,7 +97,7 @@ body,html {
 }
 
 .nav-tab {
-    @include content-box();
+    @extend %content-box;
     margin: 0em 1rem;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
@@ -123,7 +122,7 @@ body,html {
     text-align: center;
     min-height: 15em;
     border-radius: 2rem;
-    @include content-box;
+    @extend %content-box;
 }
 
 /*
@@ -137,38 +136,59 @@ body,html {
 }
 
 .menu-card {
+    @extend %content-box;
     width: 80%;
     text-align: left;
-    border: 1px $slate solid;
     padding: 1em;
     margin-bottom: .8em;
-}
+    border-radius: 1rem;
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: stretch;
 
-.menu-card p {
-    margin: .3em 0em;
-}
+    .text-wrapper {
+        flex-grow: 1;
+        margin-right: 2em;
 
-.food-title {
-    font-weight:500;
-    border-bottom: 2px solid $highlight;
-    margin-bottom: .7em;
-}
+        p {
+            margin: .3em 0em;
+        }    
 
-.food-description {
-    font-weight: 300;
-    font-style: italic;
-}
+        .food-title {
+            font-weight:500;
+            border-bottom: 2px solid $highlight;
+            margin-bottom: .7em;
+        }
 
-.unit-price::before {
-    content: 'Single: $';
-}
+        .food-description {
+            font-weight: 300;
+            font-style: italic;
+        }
 
-.dozen-price::before {
-    content: 'Dozen: $'
-}
+        .unit-price::before {
+            content: 'Single: $';
+        }
 
-.menu-card img {
-    max-width: 30%;
-    max-height: 30%;
-    float:right;
+        .dozen-price::before {
+            content: 'Dozen: $'
+        }
+    }
+
+
+    .image-wrapper {
+        overflow: hidden;
+        height: 8rem;
+        width: 8rem;
+        border-radius: .5rem;
+        object-fit: cover;
+        flex-shrink: 0;
+        flex-grow: 0;
+    
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+    }
 }

@@ -1,6 +1,6 @@
 import Data from './menu.csv';
 import defaultImage from './img/default.jpeg';
-const getImagesOnline = false;
+const getImagesOnline = true;
 
 
 const getImage = function(URL) {
@@ -36,7 +36,7 @@ const createArray = function() {
         const unitPrice = item[index.unitPrice];
         const dozenPrice = item[index.dozenPrice];
         const imageURL = item[index.imageURL];
-        const imageElement = getImage();
+        const imageElement = getImage(imageURL);
 
         arrMenu.push({id, name, description, unitPrice, dozenPrice, imageURL,imageElement});
     })
