@@ -1,10 +1,23 @@
-export default function dommy() {
-    const log = function(a) {
-        console.log(a);
-    }
-    return {log};
+const hank = function() {
+        say();
 }
 
-function say() {
-    console.log("say");
+const say = function() {
+    console.log("We Did It!");
 }
+
+const parseElementName = function(str) {
+    const symbols = [".","#"]
+    
+    const findEnd (str) {
+        return str.split()
+    }
+
+}
+
+
+class DmyElement {
+    
+}
+
+export {hank};

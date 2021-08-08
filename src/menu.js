@@ -3,7 +3,7 @@ const render = function() {
         wrapper.classList = "content-container";
 
     const p = document.createElement('p');
-    p.textContent =  "Home Page"
+    p.textContent =  "Our Menu"
     wrapper.appendChild(p);
 
     return wrapper;
