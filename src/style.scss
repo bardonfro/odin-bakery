@@ -8,6 +8,12 @@ $dough: #cb8857ff; // --raw-sienna
 $highlight: #4d7ea8ff; //--steel-blue
 $milk: #f3f5f7ff; // --cultured
 
+// Google Font
+@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,100&family=Tangerine&display=swap');
+
+$title-font: 'Tangerine', cursive;
+$body-font: 'Roboto', sans-serif;
 
 .div {
     border: 1px solid rgba(0,0,0,.4);
@@ -20,6 +26,9 @@ body,html {
     margin: 0;
     width: 100%;
     height: 100%;
+    font-family: $body-font;
+    color: $highlight;
+    min-width: 500px;
 }
 
 #page-wrapper {
@@ -40,16 +49,36 @@ body,html {
     margin-bottom: 2rem;
 }
 
-.subtitle-band {
-    background-color: $dough;
-    color: $chocolate;
-    width: 100%;
-    text-align: center;
-
+.title {
+    font-family: $title-font;
+    font-size: 5.5rem;
+    margin-bottom: 0px;
+    margin-bottom: -.25em;
+    z-index: 5;
+    color: $slate;
 }
 
+.title-baseline {
+    width: 23rem;
+    border: 2px solid $dough;
+    border-radius: 50%;
+    margin-bottom: 1.7rem;
+    content: 'y';
+}
+
+.subtitle-band {
+    background-color: $milk;
+    color: $slate;
+    width: 100%;
+    text-align: center;
+}
+
+
 .subtitle {
-    margin: .2em;
+    margin: .1em;
+    font-family: $body-font;
+    font-style: italic;
+    font-size: 1.2rem;
 }
 
 .nav {
@@ -72,7 +101,7 @@ body,html {
     border-bottom: none;
     padding: .5em;
     opacity: .8;
-    background-color: $dough;
+    background-color: $milk;
     border: 2px solid $chocolate;
     border-bottom: none;
 }
@@ -90,7 +119,7 @@ body,html {
     width:80%;
     max-width: 35em;
     text-align: center;
-    background-color: $dough;
+    background-color: $milk;
     opacity: .8;
     min-height: 20em;
     border-radius: 2em;

@@ -20,6 +20,9 @@ const headerWrapper = dmy.el("div#header");
 const pageHeader = dmy.el("h1.title", "Golden Edge");
     headerWrapper.appendChild(pageHeader);
 
+const titleBaseline = dmy.el("div.title-baseline");
+    headerWrapper.appendChild(titleBaseline);
+
 const subtitleBand = dmy.el('div.subtitle-band');
     headerWrapper.appendChild(subtitleBand);
 
