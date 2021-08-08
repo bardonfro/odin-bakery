@@ -24,8 +24,12 @@ const parseElementName = function(str) {
     })
 
     let element = document.createElement(_element.tag);
-        element.id = _element.id;
-        element.classList = _element.classList.slice(1);
+        if (_element.id.length > 0) {
+            element.id = _element.id;
+        }
+        if (_element.classList.length > 0) {
+            element.classList = _element.classList.slice(1);
+        }
     return element;
 
 }

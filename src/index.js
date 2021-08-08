@@ -1,4 +1,4 @@
-import './style.css';
+import './style.scss';
 import * as home from './home.js';
 import * as menu from './menu.js';
 import * as contact from './contact.js';
@@ -17,11 +17,14 @@ const pageWrapper = dmy.el("div#page-wrapper");
 const headerWrapper = dmy.el("div#header");
     pageWrapper.appendChild(headerWrapper);
 
-const pageHeader = dmy.el("h1", "Golden Edge");
+const pageHeader = dmy.el("h1.title", "Golden Edge");
     headerWrapper.appendChild(pageHeader);
 
-const pageSubhead = dmy.el("h2", "Confectioners of Fine Cookies");
-    headerWrapper.appendChild(pageSubhead);
+const subtitleBand = dmy.el('div.subtitle-band');
+    headerWrapper.appendChild(subtitleBand);
+
+const pageSubhead = dmy.el("h2.subtitle", "Confectioners of Fine Cookies");
+    subtitleBand.appendChild(pageSubhead);
 
 const nav = dmy.el("div.nav");
     pageWrapper.appendChild(nav);
