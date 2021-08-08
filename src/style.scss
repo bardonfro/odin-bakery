@@ -21,12 +21,6 @@ $body-font: 'Roboto', sans-serif;
     color: $highlight;
 }
 
-.div {
-    border: 1px solid rgba(0,0,0,.4);
-    margin: 1px;
-    min-width: 10px;
-    min-height: 10px;
-}
 
 body,html {
     margin: 0;
@@ -128,4 +122,21 @@ body,html {
     min-height: 15em;
     border-radius: 2rem;
     @include content-box;
+}
+
+/*
+    Menu Styling
+*/
+
+.menu-wrapper {
+    display: flex;
+}
+
+.menu-card {
+    text-align: left;
+}
+
+.menu-card img {
+    max-width: 30%;
+    max-height: 30%;
 }

@@ -40,5 +40,11 @@ const el = function (name, textContent) {
     return element;
 }
 
+const appendChildren = function(parent, ...children) {
+    children.forEach(function(child) {
+        parent.appendChild(child);
+    })
+}
 
-export {el};
+
+export {el, appendChildren};

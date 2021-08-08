@@ -9,38 +9,38 @@ let pages =[
     {name: "Menu", render: menu.render},
     {name: "Contact", render: contact.render},
 ];
-const startPage = pages[0];
+const startPage = pages[1];
 
 const pageWrapper = dmy.el("div#page-wrapper");
     document.body.appendChild(pageWrapper);
 
 const headerWrapper = dmy.el("div#header");
-    pageWrapper.appendChild(headerWrapper);
 
 const pageHeader = dmy.el("h1.title", "Golden Edge");
-    headerWrapper.appendChild(pageHeader);
 
 const titleBaseline = dmy.el("div.title-baseline");
-    headerWrapper.appendChild(titleBaseline);
 
 const subtitleBand = dmy.el('div.subtitle-band');
-    headerWrapper.appendChild(subtitleBand);
+
 
 const pageSubhead = dmy.el("h2.subtitle", "Confectioners of Fine Cookies");
-    subtitleBand.appendChild(pageSubhead);
+subtitleBand.appendChild(pageSubhead);
 
 const nav = dmy.el("div.nav");
-    pageWrapper.appendChild(nav);
 
-    const navTabWrapper = dmy.el("div.nav-tab-wrapper");
-        nav.appendChild(navTabWrapper);
+const navTabWrapper = dmy.el("div.nav-tab-wrapper");
+nav.appendChild(navTabWrapper);
 
-    pages.forEach(function(page) {
-        navTabWrapper.appendChild(newNavTab(page));
-    })
+pages.forEach(function(page) {
+    navTabWrapper.appendChild(newNavTab(page));
+})
 
 const contentWrapper = dmy.el("div#content");
-    pageWrapper.appendChild(contentWrapper);
+
+
+dmy.appendChildren(headerWrapper, pageHeader,titleBaseline, subtitleBand);
+dmy.appendChildren(pageWrapper,headerWrapper,nav,contentWrapper);
+
 
     
 
