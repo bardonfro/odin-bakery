@@ -16,7 +16,7 @@ const pageWrapper = dmy.el("div#page-wrapper");
 const headerWrapper = dmy.el("div#header");
     pageWrapper.appendChild(headerWrapper);
 
-const pageHeader = dmy.el("h1", "Golden Eagle");
+const pageHeader = dmy.el("h1", "Golden Edge");
     headerWrapper.appendChild(pageHeader);
 
 const pageSubhead = dmy.el("h2", "Confectioners of Fine Cookies");
@@ -25,11 +25,11 @@ const pageSubhead = dmy.el("h2", "Confectioners of Fine Cookies");
 const nav = dmy.el("div.nav");
     pageWrapper.appendChild(nav);
 
-    const menuBtnWrapper = dmy.el("div.menu-button-wrapper");
-        nav.appendChild(menuBtnWrapper);
+    const navTabWrapper = dmy.el("div.nav-tab-wrapper");
+        nav.appendChild(navTabWrapper);
 
     pages.forEach(function(page) {
-        menuBtnWrapper.appendChild(newNavButton(page));
+        navTabWrapper.appendChild(newNavTab(page));
     })
 
 const contentWrapper = dmy.el("div#content");
@@ -37,13 +37,13 @@ const contentWrapper = dmy.el("div#content");
 
     
 
-function newNavButton(obj) {
-    const btn = dmy.el("button.nav-button",obj.name);
-    btn.onclick = clickNavButton.bind(obj);
+function newNavTab(obj) {
+    const btn = dmy.el("div.nav-tab",obj.name);
+    btn.onclick = clickNavTab.bind(obj);
     return btn;
 }
 
-function clickNavButton() {
+function clickNavTab() {
     contentWrapper.textContent = "";
     contentWrapper.appendChild(this.render());
 }
