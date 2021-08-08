@@ -45,7 +45,9 @@ body,html {
 .nav-tab-wrapper {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
+    width:40%;
+    justify-content: space-between;
 }
 
 .nav-tab {
