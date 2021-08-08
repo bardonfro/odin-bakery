@@ -9,7 +9,7 @@ let pages =[
     {name: "Menu", render: menu.render},
     {name: "Contact", render: contact.render},
 ];
-const startPage = pages[1];
+const startPage = pages[0];
 
 const pageWrapper = dmy.el("div#page-wrapper");
     document.body.appendChild(pageWrapper);

@@ -123,6 +123,7 @@ body,html {
     min-height: 15em;
     border-radius: 2rem;
     @extend %content-box;
+    padding: 1em;
 }
 
 /*
