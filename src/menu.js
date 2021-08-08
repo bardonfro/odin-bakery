@@ -1,3 +1,5 @@
+import * as dmy from './dommy.js';
+
 const render = function() {
     const wrapper = document.createElement('div');
         wrapper.classList = "content-container";

@@ -37,8 +37,4 @@ const el = function (name, textContent) {
 }
 
 
-class DmyElement {
-    
-}
-
 export {el};

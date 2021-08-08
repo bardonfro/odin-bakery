@@ -1,5 +1,4 @@
 import './style.css';
-import CookieStack from './cookie-stack.jpg';
 import * as home from './home.js';
 import * as menu from './menu.js';
 import * as contact from './contact.js';
@@ -48,3 +47,6 @@ function clickNavButton() {
     contentWrapper.textContent = "";
     contentWrapper.appendChild(this.render());
 }
+
+//Initial page load - default to Home
+contentWrapper.appendChild(home.render());

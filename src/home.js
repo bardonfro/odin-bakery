@@ -1,10 +1,12 @@
-const render = function() {
-    const wrapper = document.createElement('div');
-        wrapper.classList = "content-container";
+import * as dmy from './dommy.js';
 
-    const p = document.createElement('p');
-    p.textContent =  "Home Page"
-    wrapper.appendChild(p);
+const introText = "Here is something good to say about our restaurant.";
+
+const render = function() {
+    const wrapper = dmy.el("div.content-container");
+
+    const intro = dmy.el("p.intro",introText);
+    wrapper.appendChild(intro);
 
     return wrapper;
 }
