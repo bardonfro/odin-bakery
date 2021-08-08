@@ -3,6 +3,7 @@ import CookieStack from './cookie-stack.jpg';
 import * as home from './home.js';
 import * as menu from './menu.js';
 import * as contact from './contact.js';
+import * as dmy from './dommy.js';
 
 let pages =[
     {name: "Home", render: home.render},
@@ -10,45 +11,36 @@ let pages =[
     {name: "Contact", render: contact.render},
 ];
 
-const pageWrapper = document.createElement('div');
-    pageWrapper.id = "page-wrapper";
+const pageWrapper = dmy.el("div#page-wrapper");
     document.body.appendChild(pageWrapper);
 
-const headerWrapper = document.createElement('div');
-    headerWrapper.id = "header";
+const headerWrapper = dmy.el("div#header");
     pageWrapper.appendChild(headerWrapper);
 
-const pageHeader = document.createElement('h1');
-    pageHeader.textContent = "Golden Edge";
+const pageHeader = dmy.el("h1", "Golden Eagle");
     headerWrapper.appendChild(pageHeader);
 
-const pageSubhead = document.createElement('h2');
-    pageSubhead.textContent = "Confectioners of Fine Cookies"
+const pageSubhead = dmy.el("h2", "Confectioners of Fine Cookies");
     headerWrapper.appendChild(pageSubhead);
 
-const nav = document.createElement('div');
-    nav.classList.add("nav");
+const nav = dmy.el("div.nav");
     pageWrapper.appendChild(nav);
 
-    const menuBtnWrapper = document.createElement('div');
-        menuBtnWrapper.classList = "menu-button-wrapper";
+    const menuBtnWrapper = dmy.el("div.menu-button-wrapper");
         nav.appendChild(menuBtnWrapper);
 
     pages.forEach(function(page) {
         menuBtnWrapper.appendChild(newNavButton(page));
     })
 
-const contentWrapper = document.createElement('div');
-    contentWrapper.id = "content";
+const contentWrapper = dmy.el("div#content");
     pageWrapper.appendChild(contentWrapper);
 
     
 
 function newNavButton(obj) {
-    const btn = document.createElement('button');
-    btn.textContent = obj.name;
+    const btn = dmy.el("button.nav-button",obj.name);
     btn.onclick = clickNavButton.bind(obj);
-    btn.classList = 'nav-button';
     return btn;
 }
 
