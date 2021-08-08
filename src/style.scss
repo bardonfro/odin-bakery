@@ -6,7 +6,7 @@ $chocolate: #320503ff; // --dark-sienna
 $slate: #4f5d75ff; // --independence
 $dough: #cb8857ff; // --raw-sienna
 $highlight: #4d7ea8ff; //--steel-blue
-$milk: #f3f5f7ff; // --cultured
+$milk: rgba(243, 245, 247, .8); // --cultured
 
 // Google Font
 @import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
@@ -14,6 +14,12 @@ $milk: #f3f5f7ff; // --cultured
 
 $title-font: 'Tangerine', cursive;
 $body-font: 'Roboto', sans-serif;
+
+@mixin content-box() {
+    background-color: $milk;
+    border: 2px solid $slate;
+    color: $highlight;
+}
 
 .div {
     border: 1px solid rgba(0,0,0,.4);
@@ -95,19 +101,18 @@ body,html {
 }
 
 .nav-tab {
+    @include content-box();
     margin: 0em 1em;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
     border-bottom: none;
     padding: .5em;
-    opacity: .8;
-    background-color: $milk;
-    border: 2px solid $chocolate;
     border-bottom: none;
 }
 
 .nav-tab.active {
     transform: scale(1.2);
+    margin-bottom:.1em;
 }
 
 #content {
@@ -119,10 +124,7 @@ body,html {
     width:80%;
     max-width: 35em;
     text-align: center;
-    background-color: $milk;
-    opacity: .8;
     min-height: 20em;
     border-radius: 2em;
-    border: 2px solid $chocolate;
-    color: #000000;
+    @include content-box;
 }
