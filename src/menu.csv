@@ -1,6 +1,6 @@
 ID,name,description,unit-price,dozen-price,imageURL
 001,Chocolate Chip,"This unique cookie is the prize of everybody",.57,5.60,"https://upload.wikimedia.org/wikipedia/commons/9/9a/Choco_chip_cookie.jpg"
-002,Oatmeal Rasin,"This other cookie, is also very good",.48,.5.10,"https://upload.wikimedia.org/wikipedia/commons/f/f1/Oatmeal_Raisin_Cookie.jpeg"
+002,Oatmeal Rasin,"This other cookie, is also very good",.48,5.10,"https://upload.wikimedia.org/wikipedia/commons/f/f1/Oatmeal_Raisin_Cookie.jpeg"
 003,Peanut Butter,"Filled with nutty delight, these are soft and moist",.49,4.95,"https://upload.wikimedia.org/wikipedia/commons/9/99/Peanut_butter_cookies_with_m%26m%27s_and_chocolate_chips.jpg"
 004,Lemon Glaze,"A perfect blend of tart and sweet",.51,5.10,"https://upload.wikimedia.org/wikipedia/commons/e/e3/Lemon_shortbread_cookies_with_lemon_royal_icing.jpg"
 005,Molasses, "These carry the perfect tang and crunch",.63,7.00,"https://upload.wikimedia.org/wikipedia/commons/7/74/Molasses-Cookies-2006March09.JPG"

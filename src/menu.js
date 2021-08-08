@@ -11,7 +11,7 @@ const renderMenuItem = function (food) {
     const dozenPrice = dmy.el("p.dozen-price",food.dozenPrice);
     const image = food.imageElement;
    
-    dmy.appendChildren(card,title,description,unitPrice,dozenPrice,image);
+    dmy.appendChildren(card,image,title,description,unitPrice,dozenPrice);
     
     return card;
 
@@ -20,16 +20,15 @@ const renderMenuItem = function (food) {
 const render = function() {
     const wrapper = dmy.el("div.content-container");
     
-    const p = document.createElement('p');
-    p.textContent =  "Our Menu"
-    wrapper.appendChild(p);
-    
-    const menuWrapper = dmy.el("div.menu-wrapper");
-        wrapper.appendChild(menuWrapper);
+    const header = dmy.el("h3.content-header","Our Menu");
 
-        menuItems.forEach(function(item) {
+    const menuWrapper = dmy.el("div.menu-wrapper");
+
+    menuItems.forEach(function(item) {
         menuWrapper.appendChild(renderMenuItem(item));
     });
+
+    dmy.appendChildren(wrapper,header,menuWrapper);
 
     return wrapper;
 }
