@@ -9,8 +9,8 @@ const renderMenuItem = function (food) {
     const description = dmy.el("p.food-description",food.description);
     const unitPrice = dmy.el("p.unit-price",food.unitPrice);
     const dozenPrice = dmy.el("p.dozen-price",food.dozenPrice);
-    const image = dmy.el("p.image-url",food.image);
-    
+    const image = food.imageElement;
+   
     dmy.appendChildren(card,title,description,unitPrice,dozenPrice,image);
     
     return card;

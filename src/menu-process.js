@@ -1,6 +1,22 @@
 import Data from './menu.csv';
+import defaultImage from './img/default.jpeg';
+const getImagesOnline = false;
 
-export default function() {
+
+const getImage = function(URL) {
+    const imageElement = new Image();
+    imageElement.classList = 'cookie-image';
+    
+    if (getImagesOnline) {
+        imageElement.src = URL;
+    } else {
+        imageElement.src = defaultImage;
+    }
+
+    return imageElement;
+}
+
+const createArray = function() {
     let arrMenu = [];
     
     //To identify the column mapping
@@ -10,7 +26,7 @@ export default function() {
         description: 2,
         unitPrice: 3,
         dozenPrice: 4,
-        image: 5,
+        imageURL: 5,
     };
 
     Data.slice(1).forEach(function(item) {
@@ -19,10 +35,15 @@ export default function() {
         const description = item[index.description];
         const unitPrice = item[index.unitPrice];
         const dozenPrice = item[index.dozenPrice];
-        const image = item[index.image];
+        const imageURL = item[index.imageURL];
+        const imageElement = getImage();
 
-        arrMenu.push({id, name, description, unitPrice, dozenPrice, image});
+        arrMenu.push({id, name, description, unitPrice, dozenPrice, imageURL,imageElement});
     })
     
     return arrMenu;
 }
+
+const arrMenu = createArray();
+
+export default function() {return arrMenu;}
