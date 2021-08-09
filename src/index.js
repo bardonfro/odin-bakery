@@ -2,32 +2,29 @@ import './style.scss';
 import * as home from './home.js';
 import * as menu from './menu.js';
 import * as contact from './contact.js';
+import footer from './footer.js';
 import * as dmy from './dommy.js';
+import github from './img/github.png';
 
 let pages =[
     {name: "Home", render: home.render},
     {name: "Menu", render: menu.render},
     {name: "Contact", render: contact.render},
 ];
-const startPage = pages[2];
+const startPage = pages[0];
 
 const pageWrapper = dmy.el("div#page-wrapper");
     document.body.appendChild(pageWrapper);
 
 const headerWrapper = dmy.el("div#header");
-
 const pageHeader = dmy.el("h1.title", "Golden Edge");
-
 const titleBaseline = dmy.el("div.title-baseline");
-
 const subtitleBand = dmy.el('div.subtitle-band');
-
 
 const pageSubhead = dmy.el("h2.subtitle", "Confectioners of Fine Cookies");
 subtitleBand.appendChild(pageSubhead);
 
 const nav = dmy.el("div.nav");
-
 const navTabWrapper = dmy.el("div.nav-tab-wrapper");
 nav.appendChild(navTabWrapper);
 
@@ -37,12 +34,9 @@ pages.forEach(function(page) {
 
 const contentWrapper = dmy.el("div#content");
 
-
 dmy.appendChildren(headerWrapper, pageHeader,titleBaseline, subtitleBand);
-dmy.appendChildren(pageWrapper,headerWrapper,nav,contentWrapper);
+dmy.appendChildren(pageWrapper,headerWrapper,nav,contentWrapper,footer());
 
-
-    
 
 function newNavTab(obj) {
     const btn = dmy.el("div.nav-tab",obj.name);
